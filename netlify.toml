@@ -1,0 +1,12 @@
+## Netlify configuration
+## - Builds the Vite app to `dist/`
+## - Uses an Edge Function to enforce "magic link" access
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[edge_functions]]
+  function = "magic-link-auth"
+  path = "/*"
+
