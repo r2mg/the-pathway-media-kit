@@ -58,7 +58,7 @@ function unauthorizedResponse(): Response {
     <title>Restricted</title>
     <style>
       html, body { height: 100%; margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-      .wrap { min-height: 100%; display:flex; align-items:center; justify-content:center; padding: 32px; background: #0b0b0b; color: #fff; }
+      .wrap { min-height: 100%; display:flex; align-items:center; justify-content:center; padding: 32px; background: #2b74ba; color: #fff; }
       .card { max-width: 560px; width: 100%; background: #151515; border: 1px solid rgba(255,255,255,0.12); padding: 24px; }
       a { color: #8ab4f8; }
       code { background: rgba(255,255,255,0.08); padding: 2px 6px; }
@@ -71,9 +71,6 @@ function unauthorizedResponse(): Response {
         <p style="margin:0 0 12px; opacity:0.9; line-height:1.5;">
           Please use the access link that was emailed to you. If you believe this is an error, contact
           <a href="mailto:sponsors@thepathway.email">sponsors@thepathway.email</a>.
-        </p>
-        <p style="margin:0; opacity:0.75; line-height:1.5;">
-          Tip: the access link includes a short token like <code>?t=...</code>.
         </p>
       </div>
     </div>
@@ -128,11 +125,11 @@ function setAccessCookie(headers: Headers, maxAgeSeconds: number) {
   );
 }
 
-export default async (request: Request): Promise<Response> => {
+export default async (request: Request, context: any): Promise<Response> => {
   const url = new URL(request.url);
 
   // Let Netlify handle the Edge Function bundle and internal paths.
-  if (url.pathname.startsWith("/.netlify/")) return fetch(request);
+  if (url.pathname.startsWith("/.netlify/")) return context.next();
 
   const secret = Netlify.env.get("AUTH_SECRET");
   if (!secret) {
@@ -146,7 +143,7 @@ export default async (request: Request): Promise<Response> => {
 
   // If already authorized, pass through (but still add noindex headers).
   if (hasCookie) {
-    const res = await fetch(request);
+    const res = await context.next();
     const headers = new Headers(res.headers);
     headers.set("X-Robots-Tag", "noindex, nofollow, noarchive");
     return new Response(res.body, { status: res.status, statusText: res.statusText, headers });
