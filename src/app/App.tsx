@@ -133,7 +133,7 @@ export default function App() {
                   fontWeight: 400
                 }}
               >
-                <CountUpNumber end={162} suffix="K+" inView={statsInView} />
+                <CountUpNumber end={181} suffix="K+" inView={statsInView} />
               </div>
               <div className="uppercase tracking-wider text-sm text-gray-600">
                 Views in the Last 90 Days
