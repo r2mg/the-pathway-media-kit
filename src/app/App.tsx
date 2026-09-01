@@ -81,10 +81,10 @@ export default function App() {
           </h1>
           <div className="text-lg text-white/90 max-w-3xl space-y-4 mb-8">
             <p>
-              The Pathway is read by medical device founders, executives, and senior operators who are actively building, scaling, or navigating the medtech industry. If you're receiving this, you already know what it is — because you read it.
+              The Pathway is a twice-weekly newsletter for the people who run medical device companies: founders, C-suite, regulatory and commercial leaders at Class II and III firms heading into or through commercialization. Around 30,000 of them subscribe, and roughly 8,000 open every issue. Monday is a curated digest of the week's most important medtech stories. Thursday is one original, reported story.
             </p>
             <p>
-              We keep advertising limited by design. We're opening a small number of sponsorship placements to companies whose work is relevant to this audience. Here's everything you need to know.
+              Each issue carries a single primary sponsor, and the Thursday Field Note carries one integrated placement. We keep it that way on purpose. A small number of slots are open to companies whose work is relevant to this audience. Everything you need to decide is on this page.
             </p>
           </div>
 
@@ -515,7 +515,7 @@ export default function App() {
         {/* Disclaimer */}
         <div className="border-l-4 border-gray-300 pl-6 mt-8 max-w-5xl">
           <p className="text-sm italic text-gray-600 leading-relaxed">
-            One sponsor per issue, maximum. All placements are reviewed for alignment with the publication's editorial standards and audience before scheduling. Copy must be clear, factual, and appropriate for a senior professional medtech audience.
+            One primary sponsor per issue. Monday text placements run alongside the primary placement, never in place of it. All placements are reviewed for fit before scheduling.
           </p>
         </div>
       </section>
