@@ -77,14 +77,14 @@ export default function App() {
               fontWeight: 400
             }}
           >
-            Reach the people making the most consequential decisions in medical devices.
+            Reach the teams deciding how medical devices get to market.
           </h1>
           <div className="text-lg text-white/90 max-w-3xl space-y-4 mb-8">
             <p>
-              The Pathway is a twice-weekly newsletter for the people who run medical device companies: founders, C-suite, regulatory and commercial leaders at Class II and III firms heading into or through commercialization. Around 30,000 of them subscribe, and roughly 8,000 open every issue. Monday is a curated digest of the week's most important medtech stories. Thursday is one original, reported story.
+              A twice-weekly newsletter read across medical device, diagnostics, and life sciences companies. More than 28,000 subscribers, roughly 6,000 of them active each month, and 97% on work email.
             </p>
             <p>
-              Each issue carries a single primary sponsor, and the Thursday Field Note carries one integrated placement. We keep it that way on purpose. A small number of slots are open to companies whose work is relevant to this audience. Everything you need to decide is on this page.
+              One primary sponsor per issue, so your message doesn't share the spotlight. Everything you need to decide is on this page.
             </p>
           </div>
 
@@ -115,10 +115,10 @@ export default function App() {
                   fontWeight: 400
                 }}
               >
-                <CountUpNumber end={30000} inView={statsInView} />
+                <CountUpNumber end={28000} suffix="+" inView={statsInView} />
               </div>
               <div className="uppercase tracking-wider text-sm text-gray-600">
-                Total Subscribers and Growing Weekly
+                Subscribers, Growing Weekly
               </div>
             </div>
 
@@ -133,10 +133,10 @@ export default function App() {
                   fontWeight: 400
                 }}
               >
-                <CountUpNumber end={181} suffix="K+" inView={statsInView} />
+                ~<CountUpNumber end={6000} inView={statsInView} />
               </div>
               <div className="uppercase tracking-wider text-sm text-gray-600">
-                Views in the Last 90 Days
+                Active Monthly Readers
               </div>
             </div>
 
@@ -151,10 +151,10 @@ export default function App() {
                   fontWeight: 400
                 }}
               >
-                22%
+                97%
               </div>
               <div className="uppercase tracking-wider text-sm text-gray-600">
-                Open Rate per Issue
+                Work Email Addresses
               </div>
             </div>
 
@@ -195,7 +195,7 @@ export default function App() {
           What We Publish
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="border border-gray-300 p-8">
             <div className="uppercase tracking-wider text-xs text-gray-500 mb-3">Monday</div>
             <h3
@@ -209,11 +209,8 @@ export default function App() {
             >
               Weekly Digest
             </h3>
-            <p className="text-gray-700 leading-relaxed mb-6">
-              A curated briefing of the top eight medtech stories of the week, sourced from across the industry. Read as a standing start-of-week reference by subscribers in regulatory, commercial, and executive roles.
-            </p>
-            <p className="text-sm" style={{ color: '#2b74ba' }}>
-              ~8,000-9,000 opens per send
+            <p className="text-gray-700 leading-relaxed">
+              The eight medtech stories worth knowing each week, pulled from across the industry and summarized in a few lines each. Read at the start of the week by people in regulatory, commercial, and executive roles.
             </p>
           </div>
 
@@ -231,7 +228,7 @@ export default function App() {
               Field Note
             </h3>
             <p className="text-gray-700 leading-relaxed mb-6">
-              One original story reported and analyzed by an industry insider — not summarized, not aggregated, just real reporting. Launched April 2026. Debut issue generated more than 10× the engagement of a typical weekly send.
+              One original story each week, reported and analyzed by someone who works in the industry. Launched April 2026. The debut issue drew more than 10x the engagement of a typical send.
             </p>
             <p className="text-sm" style={{ color: '#2b74ba' }}>
               Highest reader engagement
@@ -239,9 +236,6 @@ export default function App() {
           </div>
         </div>
 
-        <div className="border-l-4 border-gray-300 pl-6 max-w-5xl">
-          <p className="text-sm italic text-gray-600 leading-relaxed">The open rate ranges from ~20-30%, holding steady at a ~22% average consistently across every issue since launch — above the B2B newsletter benchmark of 20%, in a category where most publications trend lower over time. This one is trending higher.</p>
-        </div>
       </section>
 
       {/* Audience Section */}
@@ -271,16 +265,20 @@ export default function App() {
             fontWeight: 400
           }}
         >
-          Medical device founders, C-suite executives, regulatory leaders, commercial operators, and investors — concentrated in Class II and III device companies at commercialization stage, early commercial, or pre-launch. Self-selected, highly engaged, and not duplicated anywhere else at this scale.
+          Founders, executives, and regulatory, commercial, and clinical leaders across medical device, diagnostics, and life sciences companies. An audience built over years in the industry.
         </blockquote>
 
+        <p className="text-lg text-gray-700 leading-relaxed mb-6">
+          The Pathway covers the decisions that move device and diagnostics companies forward: regulatory strategy, go-to-market sequencing, reimbursement, capital, and partnerships. If your company serves any part of that work, this is your audience.
+        </p>
+
         <p className="text-lg text-gray-700 leading-relaxed mb-12">
-          This is not a broad healthcare audience. It is a narrow, specific one: the people who make decisions about regulatory strategy, go-to-market sequencing, reimbursement planning, capital allocation, and partnerships. If your company serves any part of that decision landscape, this is your audience.
+          Readers work at companies including Boston Scientific, Alcon, Biotronik, bioMérieux, GE HealthCare, B. Braun, Philips, Siemens Healthineers, Johnson & Johnson, and Cardinal Health.
         </p>
 
         <div className="border-l-4 border-gray-300 pl-6">
           <p className="text-sm italic text-gray-600 leading-relaxed">
-            This is not the right fit for consumer health products, pharma-only solutions, or companies seeking high-volume click performance. We're a high-trust publication with a specific audience. Placements that are relevant perform. We'd rather tell you that upfront than take your money and deliver a misaligned result.
+            We're not the right fit for consumer health or pharma-only products. We'd rather say so now than sell you a placement that doesn't fit.
           </p>
         </div>
         </div>
@@ -328,10 +326,10 @@ export default function App() {
                   fontWeight: 400
                 }}
               >
-                Monday Digest — Primary Sponsor
+                Monday Digest, Primary Sponsor
               </div>
               <p className="text-gray-700 leading-relaxed">
-                Logo above editorial content, one positioning line, one link. Maximum visibility within the Monday send. Top-of-issue placement seen by every opener before any editorial content.
+                Logo and one positioning line at the top of the issue, one link.
               </p>
             </div>
             <div className="col-span-4 text-right flex flex-col justify-center">
@@ -343,7 +341,7 @@ export default function App() {
                   fontWeight: 400
                 }}
               >
-                $2,500
+                $1,500
               </div>
               <div className="text-sm text-gray-500">per issue</div>
             </div>
@@ -361,10 +359,10 @@ export default function App() {
                   fontWeight: 400
                 }}
               >
-                Monday Digest — Text Placement
+                Monday Digest, Sponsor Block
               </div>
               <p className="text-gray-700 leading-relaxed">
-                2–3 lines of copy within the newsletter body, one link or CTA. Works well for event announcements, tool offers, or targeted visibility without header-level commitment.
+                Two or three lines in their own block after the third story. One link.
               </p>
             </div>
             <div className="col-span-4 text-right flex flex-col justify-center">
@@ -376,16 +374,16 @@ export default function App() {
                   fontWeight: 400
                 }}
               >
-                $1,750
+                $750
               </div>
               <div className="text-sm text-gray-500">per issue</div>
             </div>
           </div>
 
           {/* Row 3 - Featured */}
-          <div className="grid grid-cols-12 gap-4 p-8 border-l-4 hover:bg-gray-50 transition-colors duration-150" style={{ borderLeftColor: '#2b74ba' }}>
+          <div className="grid grid-cols-12 gap-4 p-8 border-b border-l-4 border-gray-300 hover:bg-gray-50 transition-colors duration-150" style={{ borderLeftColor: '#2b74ba' }}>
             <div className="col-span-8">
-              <div className="flex items-center gap-3 mb-3">
+              <div className="mb-3">
                 <div
                   style={{
                     fontFamily: 'athelas, Georgia, serif',
@@ -394,14 +392,14 @@ export default function App() {
                     fontWeight: 400
                   }}
                 >
-                  Thursday Field Note — Sponsor
+                  Thursday Field Note, Sponsor
                 </div>
-                <span className="px-2 py-1 text-xs uppercase tracking-wider bg-[#2b74ba] text-white">
+                <span className="inline-block mt-2 px-2 py-1 text-xs uppercase tracking-wider bg-[#2b74ba] text-white">
                   Highest Engagement
                 </span>
               </div>
               <p className="text-gray-700 leading-relaxed">
-                Integrated mention within the highest-engagement send in the newsletter. Contextual placement alongside original medtech journalism. One link or CTA. The Field Note audience is the most actively engaged segment of the list.
+                Your message featured in Thursday's original story issue. One link.
               </p>
             </div>
             <div className="col-span-4 text-right flex flex-col justify-center">
@@ -413,7 +411,40 @@ export default function App() {
                   fontWeight: 400
                 }}
               >
-                $2,500
+                $1,500
+              </div>
+              <div className="text-sm text-gray-500">per issue</div>
+            </div>
+          </div>
+
+          {/* Row 4 */}
+          <div className="grid grid-cols-12 gap-4 p-8 hover:bg-gray-50 transition-colors duration-150">
+            <div className="col-span-8">
+              <div
+                className="mb-3"
+                style={{
+                  fontFamily: 'athelas, Georgia, serif',
+                  fontSize: '1.25rem',
+                  color: '#1A1A18',
+                  fontWeight: 400
+                }}
+              >
+                Thursday Field Note, Sponsor Block
+              </div>
+              <p className="text-gray-700 leading-relaxed">
+                Two or three lines in their own block. One link.
+              </p>
+            </div>
+            <div className="col-span-4 text-right flex flex-col justify-center">
+              <div
+                style={{
+                  fontFamily: 'athelas, Georgia, serif',
+                  fontSize: '2rem',
+                  color: '#2b74ba',
+                  fontWeight: 400
+                }}
+              >
+                $750
               </div>
               <div className="text-sm text-gray-500">per issue</div>
             </div>
@@ -478,44 +509,147 @@ export default function App() {
         </div>
 
         {/* Package Pricing */}
-        <div className="mt-12 bg-[#FBF9F4] border border-[#E5D5B7] p-8">
-          <div className="flex justify-between">
-            <div className="flex-1">
-              <div
-                className="mb-3"
-                style={{
-                  fontFamily: 'athelas, Georgia, serif',
-                  fontSize: '1.5rem',
-                  color: '#1A1A18',
-                  fontWeight: 400
-                }}
-              >
-                Multi-Issue Commitment
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-[#FBF9F4] border border-[#E5D5B7] border-l-4 p-8" style={{ borderLeftColor: '#2b74ba' }}>
+            <div className="flex justify-between gap-8 h-full">
+              <div className="flex-1">
+                <div
+                  className="mb-3"
+                  style={{
+                    fontFamily: 'athelas, Georgia, serif',
+                    fontSize: '1.5rem',
+                    color: '#1A1A18',
+                    fontWeight: 400
+                  }}
+                >
+                  Four-Issue Package
+                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  Any mix of Monday and Thursday primary placements. Reach out to discuss dates and availability.
+                </p>
               </div>
-              <p className="text-gray-700 leading-relaxed">
-                Available for Monday Digest Primary Sponsor and Thursday Field Note placements only. <strong>Four-issue packages are priced at $8,500</strong> — a discount of roughly 15% off the single-issue rate. Mix and match across Monday and Thursday placements. Reach out to discuss specific dates and availability.
-              </p>
+              <div className="text-right flex flex-col justify-center shrink-0">
+                <div
+                  style={{
+                    fontFamily: 'athelas, Georgia, serif',
+                    fontSize: '2.5rem',
+                    color: '#2b74ba',
+                    fontWeight: 400
+                  }}
+                >
+                  $5,000
+                </div>
+                <div className="text-sm text-gray-500">four issues</div>
+              </div>
             </div>
-            <div className="ml-8 text-right flex flex-col justify-center">
-              <div
-                style={{
-                  fontFamily: 'athelas, Georgia, serif',
-                  fontSize: '2.5rem',
-                  color: '#2b74ba',
-                  fontWeight: 400
-                }}
-              >
-                $8,500
+          </div>
+
+          <div className="bg-[#FBF9F4] border border-[#E5D5B7] p-8">
+            <div className="flex justify-between gap-8 h-full">
+              <div className="flex-1">
+                <div
+                  className="mb-3"
+                  style={{
+                    fontFamily: 'athelas, Georgia, serif',
+                    fontSize: '1.5rem',
+                    color: '#1A1A18',
+                    fontWeight: 400
+                  }}
+                >
+                  Full-Year Commitment
+                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  Twelve issues, one a month. Limited to six sponsors per year.
+                </p>
               </div>
-              <div className="text-sm text-gray-500">per 4 issue engagement</div>
+              <div className="text-right flex flex-col justify-center shrink-0">
+                <div
+                  style={{
+                    fontFamily: 'athelas, Georgia, serif',
+                    fontSize: '2.5rem',
+                    color: '#2b74ba',
+                    fontWeight: 400
+                  }}
+                >
+                  $13,500
+                </div>
+                <div className="text-sm text-gray-500">twelve issues</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-[#FBF9F4] border border-[#E5D5B7] p-8">
+            <div className="flex justify-between gap-8 h-full">
+              <div className="flex-1">
+                <div
+                  className="mb-3"
+                  style={{
+                    fontFamily: 'athelas, Georgia, serif',
+                    fontSize: '1.5rem',
+                    color: '#1A1A18',
+                    fontWeight: 400
+                  }}
+                >
+                  Dedicated Send
+                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  A single email under The Pathway name carrying your content: a report, data, or an event. Clearly labeled as sponsored, and we approve the content. One per quarter.
+                </p>
+              </div>
+              <div className="text-right flex flex-col justify-center shrink-0">
+                <div
+                  style={{
+                    fontFamily: 'athelas, Georgia, serif',
+                    fontSize: '2.5rem',
+                    color: '#2b74ba',
+                    fontWeight: 400
+                  }}
+                >
+                  $3,000
+                </div>
+                <div className="text-sm text-gray-500">per send</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-[#FBF9F4] border border-[#E5D5B7] p-8">
+            <div className="flex justify-between gap-8 h-full">
+              <div className="flex-1">
+                <div
+                  className="mb-3"
+                  style={{
+                    fontFamily: 'athelas, Georgia, serif',
+                    fontSize: '1.5rem',
+                    color: '#1A1A18',
+                    fontWeight: 400
+                  }}
+                >
+                  Special Editions
+                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  Year in Review (December) and our annual list (January) each carry a single presenting sponsor.
+                </p>
+              </div>
+              <div className="text-right flex flex-col justify-center shrink-0">
+                <div
+                  style={{
+                    fontFamily: 'athelas, Georgia, serif',
+                    fontSize: '2.5rem',
+                    color: '#2b74ba',
+                    fontWeight: 400
+                  }}
+                >
+                  Inquire
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Disclaimer */}
-        <div className="border-l-4 border-gray-300 pl-6 mt-8 max-w-5xl">
+        <div className="border-l-4 border-gray-300 pl-6 mt-12 max-w-5xl">
           <p className="text-sm italic text-gray-600 leading-relaxed">
-            One primary sponsor per issue. Monday text placements run alongside the primary placement, never in place of it. All placements are reviewed for fit before scheduling.
+            One primary sponsor per issue. Sponsor blocks run alongside the primary placement, never in place of it. Every placement is reviewed for fit before scheduling, and every sponsor gets a report of opens and link clicks afterward.
           </p>
         </div>
       </section>
@@ -535,18 +669,15 @@ export default function App() {
             To inquire about open dates
           </h2>
           <p className="text-gray-300 leading-relaxed mb-8 text-lg">
-            Sponsorship slots are scheduled on a rolling basis and limited by design. We can typically confirm availability and turn around a placement within a week of agreement. Reach out directly — no forms, no sales process.
+            We schedule on a rolling basis and can usually confirm a date and run your placement within a week of agreement. Reach out directly. No forms, no sales process.
           </p>
           <a
             href="mailto:sponsors@thepathway.email?subject=I'd like to sponsor The Pathway"
-            className="inline-block px-8 py-4 bg-[#2b74ba] text-white hover:bg-[#1f5489] transition-colors duration-200 mb-8"
+            className="inline-block px-8 py-4 bg-[#2b74ba] text-white hover:bg-[#1f5489] transition-colors duration-200"
             style={{ fontFamily: 'athelas, Georgia, serif', fontSize: '1.125rem' }}
           >
             Sponsor the Pathway
           </a>
-          <p className="text-sm italic text-gray-400 leading-relaxed">
-            Availability is first-come, first-scheduled. Issues during periods of high industry activity — earnings seasons, major conference weeks — book quickly.
-          </p>
         </div>
       </section>
 
