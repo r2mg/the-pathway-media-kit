@@ -151,7 +151,7 @@ export default function App() {
                   fontWeight: 400
                 }}
               >
-                97%
+                <CountUpNumber end={97} suffix="%" inView={statsInView} />
               </div>
               <div className="uppercase tracking-wider text-sm text-gray-600">
                 Work Email Addresses
