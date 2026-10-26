@@ -81,7 +81,7 @@ export default function App() {
           </h1>
           <div className="text-lg text-white/90 max-w-3xl space-y-4 mb-8">
             <p>
-              A twice-weekly newsletter read across medical device, diagnostics, and life sciences companies. More than 28,000 subscribers, roughly 6,000 of them active each month, and 97% on work email.
+              A twice-weekly newsletter read across medical device, diagnostics, and life sciences companies. More than 28,000 subscribers, 6,000+ opens per issue, roughly 50,000 opens a month, and 97% on work email.
             </p>
             <p>
               One primary sponsor per issue, so your message doesn't share the spotlight. Everything you need to decide is on this page.
@@ -96,6 +96,15 @@ export default function App() {
             >
               Sponsor the Pathway
             </a>
+            <p className="mt-4 text-sm text-white/70">
+              or email{' '}
+              <a
+                href="mailto:sponsors@thepathway.email?subject=I'd like to sponsor The Pathway"
+                className="underline decoration-white/40 hover:text-white"
+              >
+                sponsors@thepathway.email
+              </a>
+            </p>
           </div>
         </div>
       </section>
@@ -133,10 +142,28 @@ export default function App() {
                   fontWeight: 400
                 }}
               >
-                ~<CountUpNumber end={6000} inView={statsInView} />
+                <CountUpNumber end={6000} suffix="+" inView={statsInView} />
               </div>
               <div className="uppercase tracking-wider text-sm text-gray-600">
-                Active Monthly Readers
+                Opens per Issue
+              </div>
+            </div>
+
+            <div className="text-center px-6">
+              <div
+                className="mb-2"
+                style={{
+                  fontFamily: 'athelas, Georgia, serif',
+                  fontSize: '4rem',
+                  lineHeight: '1',
+                  color: '#2b74ba',
+                  fontWeight: 400
+                }}
+              >
+                ~<CountUpNumber end={50000} inView={statsInView} />
+              </div>
+              <div className="uppercase tracking-wider text-sm text-gray-600">
+                Opens per Month
               </div>
             </div>
 
@@ -155,24 +182,6 @@ export default function App() {
               </div>
               <div className="uppercase tracking-wider text-sm text-gray-600">
                 Work Email Addresses
-              </div>
-            </div>
-
-            <div className="text-center px-6">
-              <div
-                className="mb-2"
-                style={{
-                  fontFamily: 'athelas, Georgia, serif',
-                  fontSize: '4rem',
-                  lineHeight: '1',
-                  color: '#2b74ba',
-                  fontWeight: 400
-                }}
-              >
-                2×
-              </div>
-              <div className="uppercase tracking-wider text-sm text-gray-600">
-                Weekly Sends <br className="hidden lg:block" /> Monday + Thursday
               </div>
             </div>
           </div>
@@ -210,7 +219,7 @@ export default function App() {
               Weekly Digest
             </h3>
             <p className="text-gray-700 leading-relaxed">
-              The eight medtech stories worth knowing each week, pulled from across the industry and summarized in a few lines each. Read at the start of the week by people in regulatory, commercial, and executive roles.
+              The eight medtech stories worth knowing each week, pulled from across the industry and summarized in a few lines each. Read at the start of the week, before the news cycle moves on.
             </p>
           </div>
 
@@ -227,11 +236,8 @@ export default function App() {
             >
               Field Note
             </h3>
-            <p className="text-gray-700 leading-relaxed mb-6">
-              One original story each week, reported and analyzed by someone who works in the industry. Launched April 2026. The debut issue drew more than 10x the engagement of a typical send.
-            </p>
-            <p className="text-sm" style={{ color: '#2b74ba' }}>
-              Highest reader engagement
+            <p className="text-gray-700 leading-relaxed">
+              One original story each week, reported and analyzed by someone who works in the industry. Launched April 2026.
             </p>
           </div>
         </div>
@@ -265,7 +271,7 @@ export default function App() {
             fontWeight: 400
           }}
         >
-          Founders, executives, and regulatory, commercial, and clinical leaders across medical device, diagnostics, and life sciences companies. An audience built over years in the industry.
+          Written for the people inside device and diagnostics companies who own regulatory, commercial, and clinical decisions. An audience built over years in the industry.
         </blockquote>
 
         <p className="text-lg text-gray-700 leading-relaxed mb-6">
@@ -280,6 +286,62 @@ export default function App() {
           <p className="text-sm italic text-gray-600 leading-relaxed">
             We're not the right fit for consumer health or pharma-only products. We'd rather say so now than sell you a placement that doesn't fit.
           </p>
+        </div>
+
+        <div className="border border-gray-300 p-8 mt-12">
+          <h3
+            className="mb-6"
+            style={{
+              fontFamily: 'athelas, Georgia, serif',
+              fontSize: '1.75rem',
+              color: '#1A1A18',
+              fontWeight: 400
+            }}
+          >
+            Who's a Good Fit
+          </h3>
+          <ul className="space-y-3 text-gray-700">
+            <li className="flex items-start">
+              <span className="mr-3 text-[#2b74ba]">•</span>
+              <span>Regulatory consulting & law firms</span>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 text-[#2b74ba]">•</span>
+              <span>QMS & submission software</span>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 text-[#2b74ba]">•</span>
+              <span>Medtech-focused recruiters & talent platforms</span>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 text-[#2b74ba]">•</span>
+              <span>Contract manufacturers & suppliers</span>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 text-[#2b74ba]">•</span>
+              <span>Reimbursement & market access advisors</span>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 text-[#2b74ba]">•</span>
+              <span>Healthcare investment banking & VC</span>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 text-[#2b74ba]">•</span>
+              <span>Commercial intelligence & CRM tools</span>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 text-[#2b74ba]">•</span>
+              <span>Clinical affairs & HEOR consultancies</span>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 text-[#2b74ba]">•</span>
+              <span>Medical device cybersecurity & penetration testing</span>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-3 text-[#2b74ba]">•</span>
+              <span>Event organizers & medtech conferences</span>
+            </li>
+          </ul>
         </div>
         </div>
       </section>
@@ -300,10 +362,7 @@ export default function App() {
           Placements & Pricing
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Left Column - Pricing Table */}
-          <div className="lg:col-span-2">
-            <div className="border border-gray-300">
+        <div className="border border-gray-300">
           {/* Table Header */}
           <div className="grid grid-cols-12 gap-4 p-6 border-b border-gray-300 bg-gray-50">
             <div className="col-span-8 uppercase tracking-wider text-xs text-gray-600">
@@ -329,7 +388,7 @@ export default function App() {
                 Monday Digest, Primary Sponsor
               </div>
               <p className="text-gray-700 leading-relaxed">
-                Logo and one positioning line at the top of the issue, one link.
+                Logo, a headline line, and two or three lines of copy at the top of the issue. One link.
               </p>
             </div>
             <div className="col-span-4 text-right flex flex-col justify-center">
@@ -381,25 +440,21 @@ export default function App() {
           </div>
 
           {/* Row 3 - Featured */}
-          <div className="grid grid-cols-12 gap-4 p-8 border-b border-l-4 border-gray-300 hover:bg-gray-50 transition-colors duration-150" style={{ borderLeftColor: '#2b74ba' }}>
+          <div className="grid grid-cols-12 gap-4 p-8 border-b border-gray-300 hover:bg-gray-50 transition-colors duration-150">
             <div className="col-span-8">
-              <div className="mb-3">
-                <div
-                  style={{
-                    fontFamily: 'athelas, Georgia, serif',
-                    fontSize: '1.25rem',
-                    color: '#1A1A18',
-                    fontWeight: 400
-                  }}
-                >
-                  Thursday Field Note, Sponsor
-                </div>
-                <span className="inline-block mt-2 px-2 py-1 text-xs uppercase tracking-wider bg-[#2b74ba] text-white">
-                  Highest Engagement
-                </span>
+              <div
+                className="mb-3"
+                style={{
+                  fontFamily: 'athelas, Georgia, serif',
+                  fontSize: '1.25rem',
+                  color: '#1A1A18',
+                  fontWeight: 400
+                }}
+              >
+                Thursday Field Note, Sponsor
               </div>
               <p className="text-gray-700 leading-relaxed">
-                Your message featured in Thursday's original story issue. One link.
+                Logo, a headline line, and two or three lines of copy featured in Thursday's original story issue. One link.
               </p>
             </div>
             <div className="col-span-4 text-right flex flex-col justify-center">
@@ -450,63 +505,6 @@ export default function App() {
             </div>
           </div>
         </div>
-          </div>
-
-          {/* Right Column - Who's a Good Fit */}
-          <div className="lg:col-span-1">
-            <div className="border border-gray-300 p-8">
-              <h3
-                className="mb-6"
-                style={{
-                  fontFamily: 'athelas, Georgia, serif',
-                  fontSize: '1.75rem',
-                  color: '#1A1A18',
-                  fontWeight: 400
-                }}
-              >
-                Who's a Good Fit
-              </h3>
-              <ul className="space-y-3 text-gray-700">
-                <li className="flex items-start">
-                  <span className="mr-3 text-[#2b74ba]">•</span>
-                  <span>Regulatory consulting & law firms</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-[#2b74ba]">•</span>
-                  <span>QMS & submission software</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-[#2b74ba]">•</span>
-                  <span>Medtech-focused recruiters & talent platforms</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-[#2b74ba]">•</span>
-                  <span>Contract manufacturers & suppliers</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-[#2b74ba]">•</span>
-                  <span>Reimbursement & market access advisors</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-[#2b74ba]">•</span>
-                  <span>Healthcare investment banking & VC</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-[#2b74ba]">•</span>
-                  <span>Commercial intelligence & CRM tools</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-[#2b74ba]">•</span>
-                  <span>Clinical affairs & HEOR consultancies</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-[#2b74ba]">•</span>
-                  <span>Event organizers & medtech conferences</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
 
         {/* Package Pricing */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -525,7 +523,7 @@ export default function App() {
                   Four-Issue Package
                 </div>
                 <p className="text-gray-700 leading-relaxed">
-                  Any mix of Monday and Thursday primary placements. Reach out to discuss dates and availability.
+                  Any mix of Monday and Thursday primary placements. Reach out to discuss dates.
                 </p>
               </div>
               <div className="text-right flex flex-col justify-center shrink-0">
@@ -649,8 +647,72 @@ export default function App() {
         {/* Disclaimer */}
         <div className="border-l-4 border-gray-300 pl-6 mt-12 max-w-5xl">
           <p className="text-sm italic text-gray-600 leading-relaxed">
-            One primary sponsor per issue. Sponsor blocks run alongside the primary placement, never in place of it. Every placement is reviewed for fit before scheduling, and every sponsor gets a report of opens and link clicks afterward.
+            One primary sponsor per issue. Sponsor blocks run alongside the primary placement, never in place of it. Every placement is reviewed for fit before scheduling, and every sponsor gets a report of opens and link clicks afterward. Copy is due three days before your issue, and payment is by card at booking.
           </p>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="bg-[#F5F3EE] py-24">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16">
+        <h2
+          className="mb-12"
+          style={{
+            fontFamily: 'athelas, Georgia, serif',
+            fontSize: '2.5rem',
+            lineHeight: '1.2',
+            color: '#1A1A18',
+            fontWeight: 400
+          }}
+        >
+          How it works
+        </h2>
+        <ol className="max-w-3xl space-y-6">
+          <li className="flex items-start gap-4">
+            <span
+              className="text-[#2b74ba] shrink-0"
+              style={{ fontFamily: 'athelas, Georgia, serif', fontSize: '1.5rem', lineHeight: '1.4' }}
+            >
+              1
+            </span>
+            <p className="text-gray-700 leading-relaxed">
+              Pick a date. We schedule on a rolling basis.
+            </p>
+          </li>
+          <li className="flex items-start gap-4">
+            <span
+              className="text-[#2b74ba] shrink-0"
+              style={{ fontFamily: 'athelas, Georgia, serif', fontSize: '1.5rem', lineHeight: '1.4' }}
+            >
+              2
+            </span>
+            <p className="text-gray-700 leading-relaxed">
+              Send your logo, copy, and link at least three days before your issue. We review it for fit and confirm when it's scheduled.
+            </p>
+          </li>
+          <li className="flex items-start gap-4">
+            <span
+              className="text-[#2b74ba] shrink-0"
+              style={{ fontFamily: 'athelas, Georgia, serif', fontSize: '1.5rem', lineHeight: '1.4' }}
+            >
+              3
+            </span>
+            <p className="text-gray-700 leading-relaxed">
+              Pay by card at booking. Receipts come from Stripe.
+            </p>
+          </li>
+          <li className="flex items-start gap-4">
+            <span
+              className="text-[#2b74ba] shrink-0"
+              style={{ fontFamily: 'athelas, Georgia, serif', fontSize: '1.5rem', lineHeight: '1.4' }}
+            >
+              4
+            </span>
+            <p className="text-gray-700 leading-relaxed">
+              After the issue sends, you get a report of opens and link clicks.
+            </p>
+          </li>
+        </ol>
         </div>
       </section>
 
@@ -666,10 +728,10 @@ export default function App() {
               fontWeight: 400
             }}
           >
-            To inquire about open dates
+            To book a placement
           </h2>
           <p className="text-gray-300 leading-relaxed mb-8 text-lg">
-            We schedule on a rolling basis and can usually confirm a date and run your placement within a week of agreement. Reach out directly. No forms, no sales process.
+            We schedule on a rolling basis. Reach out directly. No forms, no sales process.
           </p>
           <a
             href="mailto:sponsors@thepathway.email?subject=I'd like to sponsor The Pathway"
@@ -678,6 +740,15 @@ export default function App() {
           >
             Sponsor the Pathway
           </a>
+          <p className="mt-4 text-sm text-gray-400">
+            or email{' '}
+            <a
+              href="mailto:sponsors@thepathway.email?subject=I'd like to sponsor The Pathway"
+              className="underline decoration-gray-500 hover:text-white"
+            >
+              sponsors@thepathway.email
+            </a>
+          </p>
         </div>
       </section>
 
