@@ -3,6 +3,8 @@ import { useInView } from 'react-intersection-observer';
 import logo from '../imports/logo@2x.png';
 import badge from '../imports/badge@2x.png';
 
+const PLACEMENT_GUIDE_URL = '/the-pathway-sponsorship-placements.pdf';
+
 function CountUpNumber({ end, duration = 2000, suffix = '', inView }: { end: number; duration?: number; suffix?: string; inView: boolean }) {
   const [count, setCount] = useState(0);
   const countRef = useRef(0);
@@ -33,6 +35,43 @@ function CountUpNumber({ end, duration = 2000, suffix = '', inView }: { end: num
   }, [end, duration, inView]);
 
   return <>{count.toLocaleString()}{suffix}</>;
+}
+
+function PlacementGuideCallout() {
+  return (
+    <div className="bg-[#E8F2F9] border border-[#1f5489] p-8 mt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <div>
+        <div className="uppercase tracking-wider text-xs text-gray-500 mb-3">
+          Placement Guide
+        </div>
+        <div
+          className="mb-3"
+          style={{
+            fontFamily: 'athelas, Georgia, serif',
+            fontSize: '1.5rem',
+            color: '#1A1A18',
+            fontWeight: 400
+          }}
+        >
+          See where each placement appears
+        </div>
+        <p className="text-gray-700 leading-relaxed">
+          Annotated layouts of the Monday Digest and Thursday Field Note, plus the<br className="hidden lg:block" />
+          special editions and the dedicated send.
+        </p>
+      </div>
+      <a
+        href={PLACEMENT_GUIDE_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        download
+        className="inline-block px-8 py-4 bg-[#2b74ba] text-white hover:bg-[#1f5489] transition-colors duration-200 shrink-0 text-center w-full md:w-auto"
+        style={{ fontFamily: 'athelas, Georgia, serif', fontSize: '1.125rem' }}
+      >
+        Download the guide (PDF)
+      </a>
+    </div>
+  );
 }
 
 export default function App() {
@@ -505,6 +544,8 @@ export default function App() {
             </div>
           </div>
         </div>
+
+        <PlacementGuideCallout />
 
         {/* Package Pricing */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
