@@ -427,7 +427,7 @@ export default function App() {
                 Monday Digest, Primary Sponsor
               </div>
               <p className="text-gray-700 leading-relaxed">
-                Logo, a headline line, and two or three lines of copy at the top of the issue. One link.
+                Your logo in the email header, plus a headline and two or three lines of copy at the top of the issue, labeled "Sponsored by" your company. One link.
               </p>
             </div>
             <div className="col-span-4 text-right flex flex-col justify-center">
@@ -493,7 +493,7 @@ export default function App() {
                 Thursday Field Note, Sponsor
               </div>
               <p className="text-gray-700 leading-relaxed">
-                Logo, a headline line, and two or three lines of copy featured in Thursday's original story issue. One link.
+                Your logo in the email header, plus a headline and two or three lines of copy placed early in the story, labeled "Sponsored by" your company. One link.
               </p>
             </div>
             <div className="col-span-4 text-right flex flex-col justify-center">
