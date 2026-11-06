@@ -1,7 +1,8 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import logo from '../imports/logo@2x.png';
 import badge from '../imports/badge@2x.png';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './components/ui/accordion';
 
 const PLACEMENT_GUIDE_URL = '/the-pathway-sponsorship-placements.pdf';
 
@@ -70,6 +71,52 @@ function PlacementGuideCallout() {
       >
         Download the guide (PDF)
       </a>
+    </div>
+  );
+}
+
+function SponsorshipTerms() {
+  const [value, setValue] = useState('');
+
+  useLayoutEffect(() => {
+    if (window.location.hash !== '#terms') return;
+    setValue('sponsorship-terms');
+    document.getElementById('terms')?.scrollIntoView();
+  }, []);
+
+  return (
+    <div id="terms" className="mt-8 scroll-mt-24 border border-[#1f5489] bg-[#F5F3EE]">
+      <Accordion type="single" collapsible value={value} onValueChange={setValue}>
+        <AccordionItem value="sponsorship-terms" className="border-b-0">
+          <AccordionTrigger
+            className="px-8 py-8 hover:no-underline items-center"
+            style={{
+              fontFamily: 'athelas, Georgia, serif',
+              fontSize: '1.25rem',
+              color: '#1A1A18',
+              fontWeight: 400
+            }}
+          >
+            Sponsorship terms
+          </AccordionTrigger>
+          <AccordionContent className="px-8 pb-8 text-base text-gray-700 leading-relaxed">
+            <ol className="list-decimal space-y-3 pl-5">
+              <li>Booking. Your dates are confirmed when your invoice is paid. Until then, dates stay open to other sponsors.</li>
+              <li>What's included. Each placement runs as described on this page and in the placement guide, on the dates listed on your invoice. Every sponsored placement is labeled "Sponsored by" your company. After each issue you receive a report of opens and link clicks.</li>
+              <li>Copy, logo and link. These are due three days before each issue. We may edit copy for length and clarity and may decline copy that isn't a fit for our readers. If materials arrive late, we may move your placement to the next available date.</li>
+              <li>Your content. You confirm that what you send us is accurate and that you have the right to use it, and you are responsible for any claims it makes, including claims about regulated products. You allow us to use your name, logo and copy in the issue, its web archive and your sponsor report.</li>
+              <li>Changes. With at least seven days' notice before an issue, you can move a placement to another available date. Payments are non-refundable.</li>
+              <li>Missed issues. If an issue does not go out as scheduled, we will run your placement on the next available date you choose. That is our only obligation for a missed issue.</li>
+              <li>No guarantees. We report reach. We do not guarantee opens, clicks or results.</li>
+              <li>Editorial independence. Sponsorship does not influence which stories we cover or how we cover them.</li>
+              <li>The Pathway is published by Roothog LLC, a Utah company. These terms are governed by Utah law.</li>
+            </ol>
+            <p className="mt-6 text-sm text-gray-500">
+              Questions about these terms: sponsors@thepathway.email
+            </p>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
     </div>
   );
 }
@@ -546,6 +593,7 @@ export default function App() {
         </div>
 
         <PlacementGuideCallout />
+        <SponsorshipTerms />
 
         {/* Package Pricing */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
