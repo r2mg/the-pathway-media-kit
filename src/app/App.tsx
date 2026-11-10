@@ -40,7 +40,7 @@ function CountUpNumber({ end, duration = 2000, suffix = '', inView }: { end: num
 
 function PlacementGuideCallout() {
   return (
-    <div className="bg-[#E8F2F9] border border-[#1f5489] p-8 mt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+    <div id="placement-guide" className="bg-[#E8F2F9] border border-[#1f5489] p-8 mt-12 scroll-mt-24 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
       <div>
         <div className="uppercase tracking-wider text-xs text-gray-500 mb-3">
           Placement Guide
@@ -103,6 +103,7 @@ function SponsorshipTerms() {
             <ol className="list-decimal space-y-3 pl-5">
               <li>Booking. Your dates are confirmed when your invoice is paid. Until then, dates stay open to other sponsors.</li>
               <li>What's included. Each placement runs as described on this page and in the placement guide, on the dates listed on your invoice. Every sponsored placement is labeled "Sponsored by" your company. After each issue you receive a report of opens and link clicks.</li>
+              <li>Exclusivity. We do not run a sponsor block from a direct competitor of an issue's primary sponsor, and we decide what counts as a direct competitor. A primary sponsor can make an issue exclusive for an added $500, in which case no sponsor block runs in that issue. Exclusivity must be requested at booking and is available only if that issue's sponsor block has not already been sold.</li>
               <li>Copy, logo and link. These are due three days before each issue. We may edit copy for length and clarity and may decline copy that isn't a fit for our readers. If materials arrive late, we may move your placement to the next available date.</li>
               <li>Your content. You confirm that what you send us is accurate and that you have the right to use it, and you are responsible for any claims it makes, including claims about regulated products. You allow us to use your name, logo and copy in the issue, its web archive and your sponsor report.</li>
               <li>Changes. With at least seven days' notice before an issue, you can move a placement to another available date. Payments are non-refundable.</li>
@@ -131,6 +132,12 @@ export default function App() {
     e.preventDefault();
     const contactSection = document.getElementById('contact');
     contactSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToPlacementGuide = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const placementGuide = document.getElementById('placement-guide');
+    placementGuide?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -170,7 +177,7 @@ export default function App() {
               A twice-weekly newsletter read across medical device, diagnostics, and life sciences companies. More than 28,000 subscribers, 6,000+ opens per issue, roughly 50,000 opens a month, and 97% on work email.
             </p>
             <p>
-              One primary sponsor per issue, so your message doesn't share the spotlight. Everything you need to decide is on this page.
+              One primary sponsor per issue. Everything you need to decide is on this page.
             </p>
           </div>
 
@@ -436,7 +443,7 @@ export default function App() {
       <section className="max-w-7xl mx-auto px-8 lg:px-16 py-24">
         <div className="uppercase tracking-wider text-xs text-gray-500 mb-4">Sponsorship Options</div>
         <h2
-          className="mb-12"
+          className="mb-4"
           style={{
             fontFamily: 'athelas, Georgia, serif',
             fontSize: '2.5rem',
@@ -447,6 +454,15 @@ export default function App() {
         >
           Placements & Pricing
         </h2>
+        <p className="mb-12">
+          <a
+            href="#placement-guide"
+            onClick={scrollToPlacementGuide}
+            className="text-[#2b74ba] hover:text-[#1f5489] underline underline-offset-4"
+          >
+            See where each placement appears
+          </a>
+        </p>
 
         <div className="border border-gray-300">
           {/* Table Header */}
@@ -462,16 +478,18 @@ export default function App() {
           {/* Row 1 */}
           <div className="grid grid-cols-12 gap-4 p-8 border-b border-gray-300 hover:bg-gray-50 transition-colors duration-150">
             <div className="col-span-8">
-              <div
-                className="mb-3"
-                style={{
-                  fontFamily: 'athelas, Georgia, serif',
-                  fontSize: '1.25rem',
-                  color: '#1A1A18',
-                  fontWeight: 400
-                }}
-              >
-                Monday Digest, Primary Sponsor
+              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-3">
+                <div
+                  style={{
+                    fontFamily: 'athelas, Georgia, serif',
+                    fontSize: '1.25rem',
+                    color: '#1A1A18',
+                    fontWeight: 400
+                  }}
+                >
+                  Monday Digest, Primary Sponsor
+                </div>
+                <span className="uppercase tracking-wider text-xs text-gray-500 whitespace-nowrap">One per issue</span>
               </div>
               <p className="text-gray-700 leading-relaxed">
                 Your logo in the email header, plus a headline and two or three lines of copy at the top of the issue, labeled "Sponsored by" your company. One link.
@@ -495,16 +513,18 @@ export default function App() {
           {/* Row 2 */}
           <div className="grid grid-cols-12 gap-4 p-8 border-b border-gray-300 hover:bg-gray-50 transition-colors duration-150">
             <div className="col-span-8">
-              <div
-                className="mb-3"
-                style={{
-                  fontFamily: 'athelas, Georgia, serif',
-                  fontSize: '1.25rem',
-                  color: '#1A1A18',
-                  fontWeight: 400
-                }}
-              >
-                Monday Digest, Sponsor Block
+              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-3">
+                <div
+                  style={{
+                    fontFamily: 'athelas, Georgia, serif',
+                    fontSize: '1.25rem',
+                    color: '#1A1A18',
+                    fontWeight: 400
+                  }}
+                >
+                  Monday Digest, Sponsor Block
+                </div>
+                <span className="uppercase tracking-wider text-xs text-gray-500 whitespace-nowrap">One per issue</span>
               </div>
               <p className="text-gray-700 leading-relaxed">
                 Two or three lines in their own block after the third story. One link.
@@ -525,19 +545,21 @@ export default function App() {
             </div>
           </div>
 
-          {/* Row 3 - Featured */}
+          {/* Row 3 */}
           <div className="grid grid-cols-12 gap-4 p-8 border-b border-gray-300 hover:bg-gray-50 transition-colors duration-150">
             <div className="col-span-8">
-              <div
-                className="mb-3"
-                style={{
-                  fontFamily: 'athelas, Georgia, serif',
-                  fontSize: '1.25rem',
-                  color: '#1A1A18',
-                  fontWeight: 400
-                }}
-              >
-                Thursday Field Note, Sponsor
+              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-3">
+                <div
+                  style={{
+                    fontFamily: 'athelas, Georgia, serif',
+                    fontSize: '1.25rem',
+                    color: '#1A1A18',
+                    fontWeight: 400
+                  }}
+                >
+                  Thursday Field Note, Primary Sponsor
+                </div>
+                <span className="uppercase tracking-wider text-xs text-gray-500 whitespace-nowrap">One per issue</span>
               </div>
               <p className="text-gray-700 leading-relaxed">
                 Your logo in the email header, plus a headline and two or three lines of copy placed early in the story, labeled "Sponsored by" your company. One link.
@@ -561,19 +583,21 @@ export default function App() {
           {/* Row 4 */}
           <div className="grid grid-cols-12 gap-4 p-8 hover:bg-gray-50 transition-colors duration-150">
             <div className="col-span-8">
-              <div
-                className="mb-3"
-                style={{
-                  fontFamily: 'athelas, Georgia, serif',
-                  fontSize: '1.25rem',
-                  color: '#1A1A18',
-                  fontWeight: 400
-                }}
-              >
-                Thursday Field Note, Sponsor Block
+              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-3">
+                <div
+                  style={{
+                    fontFamily: 'athelas, Georgia, serif',
+                    fontSize: '1.25rem',
+                    color: '#1A1A18',
+                    fontWeight: 400
+                  }}
+                >
+                  Thursday Field Note, Sponsor Block
+                </div>
+                <span className="uppercase tracking-wider text-xs text-gray-500 whitespace-nowrap">One per issue</span>
               </div>
               <p className="text-gray-700 leading-relaxed">
-                Two or three lines in their own block. One link.
+                Two or three lines in their own block at the end of the story. One link.
               </p>
             </div>
             <div className="col-span-4 text-right flex flex-col justify-center">
@@ -592,8 +616,9 @@ export default function App() {
           </div>
         </div>
 
-        <PlacementGuideCallout />
-        <SponsorshipTerms />
+        <p className="mt-6 text-center text-[#2b74ba] leading-relaxed">
+          <strong className="font-semibold">Want the issue to yourself?</strong> Add exclusivity to any primary placement for $500, and no sponsor block runs in that issue. Subject to availability.
+        </p>
 
         {/* Package Pricing */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -646,7 +671,7 @@ export default function App() {
                   Full-Year Commitment
                 </div>
                 <p className="text-gray-700 leading-relaxed">
-                  Twelve issues, one a month. Limited to six sponsors per year.
+                  Twelve primary placements, one a month. Limited to six sponsors per year.
                 </p>
               </div>
               <div className="text-right flex flex-col justify-center shrink-0">
@@ -736,9 +761,12 @@ export default function App() {
         {/* Disclaimer */}
         <div className="border-l-4 border-gray-300 pl-6 mt-12 max-w-5xl">
           <p className="text-sm italic text-gray-600 leading-relaxed">
-            One primary sponsor per issue. Sponsor blocks run alongside the primary placement, never in place of it. Every placement is reviewed for fit before scheduling, and every sponsor gets a report of opens and link clicks afterward. Copy is due three days before your issue, and payment is by card at booking.
+            Each issue carries one primary sponsor and no more than one sponsor block. The block runs alongside the primary placement, never in place of it. Every placement is reviewed for fit before scheduling, and every sponsor gets a report of opens and link clicks afterward. Copy is due three days before your issue, and payment is by card at booking.
           </p>
         </div>
+
+        <PlacementGuideCallout />
+        <SponsorshipTerms />
       </section>
 
       {/* How it works */}
